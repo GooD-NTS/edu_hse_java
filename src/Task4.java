@@ -8,14 +8,14 @@ public class Task4 {
     //14) среднее арифметическое положительных элементов в каждом столбце матрицы
 
     public static void main(String[] args) {
-        var rows = 4;
-        var cols = 4;
+        var rows = 40;
+        var cols = 40;
 
         var matrix = createMatrix(rows, cols);
-        System.out.println("");
+        System.out.println("---");
 
         for (int j = 0; j < cols; j++) {
-            var col = getMatrixCol(matrix, rows, cols, j);
+            var col = getMatrixCol(matrix, rows, j);
             var columnMean = getColumnMean(col);
             System.out.printf("Среднее арифметическое положительных элементов в столбце %d: %.2f%n", j, columnMean);
         }
@@ -38,7 +38,7 @@ public class Task4 {
         return matrix;
     }
 
-    static int[] getMatrixCol(int[][] matrix, int rows, int cols, int col) {
+    static int[] getMatrixCol(int[][] matrix, int rows, int col) {
         var result = new int[rows];
 
         var current = 0;

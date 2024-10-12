@@ -10,7 +10,7 @@ public class Task3 {
     //Выдать на экран номер элемента и сумму.
 
     public static void main(String[] args) {
-        var n = 10;
+        var n = 50;
 
         var random = new Random();
         var a = new int[n];
