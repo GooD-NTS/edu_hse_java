@@ -14,11 +14,14 @@ public class Task4 {
         var matrix = createMatrix(rows, cols);
         System.out.println("---");
 
+        var means = new double[cols];
         for (int j = 0; j < cols; j++) {
             var col = getMatrixCol(matrix, rows, j);
-            var columnMean = getColumnMean(col);
-            System.out.printf("Среднее арифметическое положительных элементов в столбце %d: %.2f%n", j, columnMean);
+            means[j] = getColumnMean(col);
         }
+
+        System.out.println("Среднее арифметическое положительных элементов в столбцах:");
+        System.out.println(Arrays.toString(means));
     }
 
     static int[][] createMatrix(int rows, int cols)
