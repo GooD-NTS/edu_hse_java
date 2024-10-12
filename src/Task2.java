@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
-public class Test2 {
-//14. Дано a,b. Найти наибольшее max(a,b) из чисел a и b.
-//Найти d:=tg(max(a,b))
+public class Task2 {
+    //Задание 2
+
+    //14) Дано a,b. Найти наибольшее max(a,b) из чисел a и b.
+    //Найти d:=tg(max(a,b))
 
     public static void main(String[] args) {
         var input = new Scanner(System.in);
