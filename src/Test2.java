@@ -19,6 +19,4 @@ public class Test2 {
         var tgMax = Math.tan(max);
         System.out.printf("Тангенс максимального числа: %.2f\n", tgMax);
     }
-
-
 }
