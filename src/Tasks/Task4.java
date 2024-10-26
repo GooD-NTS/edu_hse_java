@@ -1,3 +1,5 @@
+package Tasks;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -7,7 +9,7 @@ public class Task4 {
 
     //14) среднее арифметическое положительных элементов в каждом столбце матрицы
 
-    public static void main(String[] args) {
+    public void DoTask(String[] args) {
         var rows = 40;
         var cols = 40;
 
@@ -24,7 +26,7 @@ public class Task4 {
         System.out.println(Arrays.toString(means));
     }
 
-    static int[][] createMatrix(int rows, int cols)
+    private int[][] createMatrix(int rows, int cols)
     {
         System.out.println("Матрица: ");
         var random = new Random();
@@ -41,7 +43,7 @@ public class Task4 {
         return matrix;
     }
 
-    static int[] getMatrixCol(int[][] matrix, int rows, int col) {
+    private int[] getMatrixCol(int[][] matrix, int rows, int col) {
         var result = new int[rows];
 
         var current = 0;
@@ -53,7 +55,7 @@ public class Task4 {
         return result;
     }
 
-    static double getColumnMean(int[] col) {
+    private double getColumnMean(int[] col) {
         double total = 0;
         var count = 0;
         for (var element : col) {

@@ -1,3 +1,5 @@
+package Tasks;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -9,7 +11,7 @@ public class Task3 {
     //Найти где он находится и вычислить сумму последующих за ним элементов.
     //Выдать на экран номер элемента и сумму.
 
-    public static void main(String[] args) {
+    public void DoTask(String[] args) {
         var n = 50;
 
         var random = new Random();
