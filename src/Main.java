@@ -2,7 +2,9 @@ import Tasks.Task1;
 import Tasks.Task2;
 import Tasks.Task3;
 import Tasks.Task4;
+import Polyclinic.Polyclinic;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -14,7 +16,7 @@ public class Main {
         var input = new Scanner(System.in);
 
         while (doWork) {
-            System.out.println(" 1 - Тестовые задачи\n 2 - Задачи Polyclinic\n 3 - Выход");
+            System.out.println(" 1 - Тестовые задачи\n 2 - Задачи Polyclinic\n 0 - Выход");
             var selectedItem = input.nextInt();
             switch (selectedItem) {
                 case 1: {
@@ -27,7 +29,7 @@ public class Main {
                     System.out.println("------------------------\n");
                     break;
                 }
-                case 3: {
+                case 0: {
                     doWork = false;
                     break;
                 }
@@ -46,9 +48,12 @@ public class Main {
         var input = new Scanner(System.in);
 
         while (doWork) {
-            System.out.println(" 1 - Задание 1 (Удвоенный куб числа)\n 2 - Задание 2 (Тангенс максимального числа)\n " +
-                    "3 - Задание 3 (Одномерный массив и единственный нулевой элемент)\n " +
-                    "4 - Задание 4 (Cреднее арифметическое положительных элементов)\n 5 - Выход");
+            System.out.println("""
+                     1 - Задание 1 (Удвоенный куб числа)
+                     2 - Задание 2 (Тангенс максимального числа)
+                     3 - Задание 3 (Одномерный массив и единственный нулевой элемент)
+                     4 - Задание 4 (Cреднее арифметическое положительных элементов)
+                     0 - Выход""");
             var selectedItem = input.nextInt();
             switch (selectedItem) {
                 case 1: {
@@ -71,7 +76,7 @@ public class Main {
                     task.DoTask(new String[]{});
                     break;
                 }
-                case 5: {
+                case 0: {
                     doWork = false;
                     break;
                 }
@@ -83,6 +88,39 @@ public class Main {
     }
 
     private static void MenuPolyclinic() {
+        System.out.println(" Тестовые задачи ");
+        System.out.println("-----------------\n");
 
+        var doWork = true;
+        var input = new Scanner(System.in);
+
+        while (doWork) {
+            System.out.println("""
+                     1 - Задание 5 (Описать свойства, конструктор, перекрыть метод toString())
+                     0 - Выход""");
+            var selectedItem = input.nextInt();
+            switch (selectedItem) {
+                case 1: {
+                    var testData = new Polyclinic("Клиника №1", "Улица 1, Дом 1",
+                            "Иванов", 1001, LocalDate.now());
+
+                    testData.setDoctorLastName("Петров");
+                    testData.setDoctorPosition("Главврач");
+                    testData.setDiagnosis("ОРВ");
+
+                    System.out.println(testData.toString());
+
+                    break;
+                }
+
+                case 0: {
+                    doWork = false;
+                    break;
+                }
+                default: {
+                    System.out.println("ERROR: Не известный элемент меню.");
+                }
+            }
+        }
     }
 }
