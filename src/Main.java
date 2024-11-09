@@ -46,7 +46,9 @@ public class Main {
         var input = new Scanner(System.in);
 
         while (doWork) {
-            System.out.println(" 1 - Задание 1\n 2 - Задание 2\n 3 - Задание 3\n 4 - Задание 4\n 5 - Выход");
+            System.out.println(" 1 - Задание 1 (Удвоенный куб числа)\n 2 - Задание 2 (Тангенс максимального числа)\n " +
+                    "3 - Задание 3 (Одномерный массив и единственный нулевой элемент)\n " +
+                    "4 - Задание 4 (Cреднее арифметическое положительных элементов)\n 5 - Выход");
             var selectedItem = input.nextInt();
             switch (selectedItem) {
                 case 1: {
