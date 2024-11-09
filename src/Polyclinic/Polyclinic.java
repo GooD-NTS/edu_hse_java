@@ -59,6 +59,17 @@ public class Polyclinic {
                "диагноз: " + diagnosis + System.lineSeparator();
     }
 
+    public String toSmallString() {
+        return "{ '" + clinicName +
+                "', '" + clinicAddress +
+                "', '" + patientLastName +
+                "', '" + patientPolicyNumber +
+                "', '" + appointmentDate +
+                "', '" + doctorLastName +
+                "', '" + doctorPosition +
+                "', '" + diagnosis + "' }" + System.lineSeparator();
+    }
+
     public String getClinicName() {
         return clinicName;
     }
