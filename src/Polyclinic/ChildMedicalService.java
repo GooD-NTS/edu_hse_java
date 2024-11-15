@@ -2,6 +2,9 @@ package Polyclinic;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 public class ChildMedicalService extends MedicalService {
 
     public enum ChildGender {
@@ -12,6 +15,10 @@ public class ChildMedicalService extends MedicalService {
     private int birthCertificateNumber;
     private ChildGender childGender;
     private int ChildAge;
+
+    public ChildMedicalService() {
+
+    }
 
     public ChildMedicalService(String clinicName, String clinicAddress, String patientLastName, int patientPolicyNumber, LocalDate appointmentDate) {
         super(clinicName, clinicAddress, patientLastName, patientPolicyNumber, appointmentDate);

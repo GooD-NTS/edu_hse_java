@@ -1,0 +1,189 @@
+[
+   {
+      "type":"MedicalService",
+      "clinicName":"Клиника №1",
+      "clinicAddress":"Улица 1, Дом 1",
+      "patientLastName":"Иванов",
+      "patientPolicyNumber":3685,
+      "appointmentDate":[
+         2023,
+         9,
+         9
+      ],
+      "doctorLastName":"Петров",
+      "doctorPosition":"Главврач",
+      "diagnosis":"ОРВ"
+   },
+   {
+      "type":"Vaccination",
+      "clinicName":"Клиника №1",
+      "clinicAddress":"Улица 1, Дом 1",
+      "patientLastName":"Иванов",
+      "patientPolicyNumber":3685,
+      "appointmentDate":[
+         2023,
+         9,
+         11
+      ],
+      "doctorLastName":"Петров",
+      "doctorPosition":"Главврач",
+      "diagnosis":"Вакцинация",
+      "vaccineName":"V-1",
+      "vaccinationDate":[
+         2023,
+         9,
+         11
+      ],
+      "validity":5
+   },
+   {
+      "type":"MedicalService",
+      "clinicName":"Медцентр №3",
+      "clinicAddress":"Проспект Мира, Дом 12",
+      "patientLastName":"Кузнецова",
+      "patientPolicyNumber":4318,
+      "appointmentDate":[
+         2023,
+         9,
+         24
+      ],
+      "doctorLastName":"Сидоров",
+      "doctorPosition":"Ортопед",
+      "diagnosis":"Артрит"
+   },
+   {
+      "type":"MedicalService",
+      "clinicName":"Клиника №1",
+      "clinicAddress":"Улица 1, Дом 1",
+      "patientLastName":"Кузнецова",
+      "patientPolicyNumber":8493,
+      "appointmentDate":[
+         2019,
+         6,
+         8
+      ],
+      "doctorLastName":"Сидоров",
+      "doctorPosition":"Терапевт",
+      "diagnosis":"Артрит"
+   },
+   {
+      "type":"MedicalService",
+      "clinicName":"Клиника №1",
+      "clinicAddress":"Бульвар Победы, Дом 34",
+      "patientLastName":"Смирнов",
+      "patientPolicyNumber":5661,
+      "appointmentDate":[
+         2024,
+         10,
+         20
+      ],
+      "doctorLastName":"Орлова",
+      "doctorPosition":"Кардиолог",
+      "diagnosis":"ОРВИ"
+   },
+   {
+      "type":"MedicalService",
+      "clinicName":"Клиника №1",
+      "clinicAddress":"Проспект Мира, Дом 12",
+      "patientLastName":"Попов",
+      "patientPolicyNumber":8977,
+      "appointmentDate":[
+         2023,
+         10,
+         26
+      ],
+      "doctorLastName":"Николаева",
+      "doctorPosition":"Кардиолог",
+      "diagnosis":"Остеохондроз"
+   },
+   {
+      "type":"MedicalService",
+      "clinicName":"Медцентр №3",
+      "clinicAddress":"Проспект Мира, Дом 12",
+      "patientLastName":"Васильев",
+      "patientPolicyNumber":5320,
+      "appointmentDate":[
+         2024,
+         3,
+         19
+      ],
+      "doctorLastName":"Орлова",
+      "doctorPosition":"Кардиолог",
+      "diagnosis":"Остеохондроз"
+   },
+   {
+      "type":"MedicalService",
+      "clinicName":"Медцентр №3",
+      "clinicAddress":"Проспект Мира, Дом 12",
+      "patientLastName":"Попов",
+      "patientPolicyNumber":7846,
+      "appointmentDate":[
+         2023,
+         11,
+         19
+      ],
+      "doctorLastName":"Сидоров",
+      "doctorPosition":"Ортопед",
+      "diagnosis":"ОРВИ"
+   },
+   {
+      "type":"MedicalService",
+      "clinicName":"Поликлиника №2",
+      "clinicAddress":"Бульвар Победы, Дом 34",
+      "patientLastName":"Смирнов",
+      "patientPolicyNumber":9349,
+      "appointmentDate":[
+         2019,
+         11,
+         18
+      ],
+      "doctorLastName":"Сидоров",
+      "doctorPosition":"Ортопед",
+      "diagnosis":"Гипертония"
+   },
+   {
+      "type":"MedicalService",
+      "clinicName":"Медцентр №3",
+      "clinicAddress":"Бульвар Победы, Дом 34",
+      "patientLastName":"Васильев",
+      "patientPolicyNumber":2340,
+      "appointmentDate":[
+         2021,
+         10,
+         5
+      ],
+      "doctorLastName":"Сидоров",
+      "doctorPosition":"Кардиолог",
+      "diagnosis":"Остеохондроз"
+   },
+   {
+      "type":"MedicalService",
+      "clinicName":"Поликлиника №2",
+      "clinicAddress":"Бульвар Победы, Дом 34",
+      "patientLastName":"Кузнецова",
+      "patientPolicyNumber":7648,
+      "appointmentDate":[
+         2024,
+         6,
+         20
+      ],
+      "doctorLastName":"Петров",
+      "doctorPosition":"Кардиолог",
+      "diagnosis":"Диабет"
+   },
+   {
+      "type":"MedicalService",
+      "clinicName":"Клиника №1",
+      "clinicAddress":"Проспект Мира, Дом 12",
+      "patientLastName":"Кузнецова",
+      "patientPolicyNumber":4416,
+      "appointmentDate":[
+         2020,
+         11,
+         8
+      ],
+      "doctorLastName":"Сидоров",
+      "doctorPosition":"Невролог",
+      "diagnosis":"Гипертония"
+   }
+]

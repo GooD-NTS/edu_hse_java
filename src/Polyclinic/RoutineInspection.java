@@ -2,6 +2,9 @@ package Polyclinic;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 public class RoutineInspection extends MedicalService  {
 
     public enum InspectionKind {
@@ -13,6 +16,10 @@ public class RoutineInspection extends MedicalService  {
     private int year; // Год
     private int validity; // Период действия
     private String result; // Результат
+
+    public RoutineInspection() {
+
+    }
 
     public RoutineInspection(String clinicName, String clinicAddress, String patientLastName, int patientPolicyNumber, LocalDate appointmentDate) {
         super(clinicName, clinicAddress, patientLastName, patientPolicyNumber, appointmentDate);

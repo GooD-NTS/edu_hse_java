@@ -1,7 +1,16 @@
 package Polyclinic;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import java.time.LocalDate;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = RoutineInspection.class, name = "RoutineInspection"),
+        @JsonSubTypes.Type(value = Vaccination.class, name = "Vaccination"),
+        @JsonSubTypes.Type(value = ChildMedicalService.class, name = "ChildMedicalService")
+})
 public class MedicalService {
 
     private String clinicName; // название поликлиники
@@ -15,6 +24,10 @@ public class MedicalService {
     private String doctorPosition; // должность врача
 
     private String diagnosis; // диагноз
+
+    public MedicalService() {
+
+    }
 
     public MedicalService(String clinicName, String clinicAddress, String patientLastName,
                           int patientPolicyNumber, LocalDate appointmentDate) {

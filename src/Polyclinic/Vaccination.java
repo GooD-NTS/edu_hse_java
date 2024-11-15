@@ -2,14 +2,23 @@ package Polyclinic;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 public class Vaccination extends MedicalService {
 
     private String vaccineName;
     private LocalDate vaccinationDate;
     private int validity; // Период действия
 
+    public Vaccination() {
+
+    }
+
     public Vaccination(String clinicName, String clinicAddress, String patientLastName, int patientPolicyNumber, LocalDate appointmentDate) {
         super(clinicName, clinicAddress, patientLastName, patientPolicyNumber, appointmentDate);
+
+        this.setVaccinationDate(appointmentDate);
     }
 
     @Override
