@@ -1,18 +1,22 @@
+import Polyclinic.MedicalServiceSortBy;
 import Tasks.Task1;
 import Tasks.Task2;
 import Tasks.Task3;
 import Tasks.Task4;
-import Polyclinic.Polyclinic;
-
+import Polyclinic.MedicalService;
+import Polyclinic.MedicalServiceStorage;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 import java.util.Random;
 
 public class Main {
+
+    private static MedicalServiceStorage msStorage;
+
     public static void main(String[] args) {
+        msStorage = new MedicalServiceStorage();
+
         System.out.println(" Education Java Project ");
         System.out.println("------------------------\n");
 
@@ -92,66 +96,19 @@ public class Main {
     }
 
     private static void MenuPolyclinic() {
-        System.out.println(" Тестовые задачи ");
-        System.out.println("-----------------\n");
+        System.out.println(" Задачи MedicalService / Polyclinic ");
+        System.out.println("------------------------------------\n");
 
         var doWork = true;
         var input = new Scanner(System.in);
-
-        while (doWork) {
-            System.out.println("""
-                     1 - Задание 5 (Описать свойства, конструктор, перекрыть метод toString())
-                     2 - Задание 6 (Базовая коллекция)
-                     0 - Выход""");
-            var selectedItem = input.nextInt();
-            switch (selectedItem) {
-                case 1: {
-                    var testData = new Polyclinic("Клиника №1", "Улица 1, Дом 1",
-                            "Иванов", 1001, LocalDate.now());
-
-                    testData.setDoctorLastName("Петров");
-                    testData.setDoctorPosition("Главврач");
-                    testData.setDiagnosis("ОРВ");
-
-                    System.out.println(testData.toString());
-
-                    break;
-                }
-                case 2: {
-                    Task6_BasicCollection();
-                    break;
-                }
-
-                case 0: {
-                    doWork = false;
-                    break;
-                }
-                default: {
-                    System.out.println("ERROR: Не известный элемент меню.");
-                }
-            }
-        }
-    }
-
-    // Задание 6
-    // Выполнить преобразование класса в коллекцию. Создать пользовательское меню.
-    // Организовать добавление объектов в коллекцию и вывод отсортированных объектов коллекции
-    // на экран с помощью меню.
-    private static void Task6_BasicCollection() {
-        System.out.println(" Коллекция Polyclinic ");
-        System.out.println("-----------------\n");
-
-        var collection = new ArrayList<Polyclinic>();
         var random = new Random();
 
-        var doWork = true;
-        var input = new Scanner(System.in);
-
         while (doWork) {
             System.out.println("""
-                     1 - Добавить элемент в коллекцию
-                     2 - Вывести коллекцию отсортированную по имени пациента
-                     3 - Вывести коллекцию отсортированную по дате посещения
+                     1 - Добавить элемент в хранилище
+                     2 - Вывести все данные отсортированные по имени пациента
+                     3 - Вывести все данные отсортированные по дате посещения
+                     4 - Вывести все данные отсортированные по названию клиники
                      0 - Выход""");
             var selectedItem = input.nextInt();
             input.nextLine();
@@ -165,36 +122,34 @@ public class Main {
 
                     var date = LocalDate.parse(nextDate);
 
-                    var testData = new Polyclinic("Клиника №1", "Улица 1, Дом 1",
+                    var testData = new MedicalService("Клиника №1", "Улица 1, Дом 1",
                             patientName, random.nextInt(10000), date);
 
                     testData.setDoctorLastName("Петров");
                     testData.setDoctorPosition("Главврач");
                     testData.setDiagnosis("ОРВ");
 
-                    collection.add(testData);
+                    msStorage.add(testData);
 
-                    System.out.println(testData.toSmallString());
+                    System.out.println(testData);
                     break;
                 }
                 case 2: {
-                    collection.sort((o1, o2) -> (o1.getPatientLastName().compareToIgnoreCase(o2.getPatientLastName())));
-
-                    System.out.println("Коллекцию отсортированная по имени пациента:");
-                    for (var item : collection) {
-                        System.out.println(item.toSmallString());
-                    }
-
+                    System.out.println("Все данные отсортированные по имени пациента:");
+                    msStorage.sort(MedicalServiceSortBy.PatientName);
+                    msStorage.print();
                     break;
                 }
                 case 3: {
-                    collection.sort((o1, o2) -> (o1.getAppointmentDate().compareTo(o2.getAppointmentDate())));
-
-                    System.out.println("Коллекцию отсортированная по дате посещения:");
-                    for (var item : collection) {
-                        System.out.println(item.toSmallString());
-                    }
-
+                    System.out.println("Все данные отсортированные по дате посещения:");
+                    msStorage.sort(MedicalServiceSortBy.AppointmentDate);
+                    msStorage.print();
+                    break;
+                }
+                case 4: {
+                    System.out.println("Все данные отсортированные по названию клиники:");
+                    msStorage.sort(MedicalServiceSortBy.ClinicName);
+                    msStorage.print();
                     break;
                 }
 

@@ -1,27 +1,8 @@
-//Задание 5
-//Создать программу на языке Java для определения класса в некоторой предметной области.
-//Описать свойства, конструктор, методы геттеры/сеттеры, перекрыть метод toString() для вывода
-//полной информации об объекте в отформатированном виде:
-//к - Конструктор
-
-//13). Медицинское обслуживание
-//
-//Polyclinic:
-//Свойства:
-//название поликлиники; к
-//адрес поликлиники; к
-//фамилия пациента; к
-//номер полиса; к
-//дата осмотра; к
-//фамилия врача;
-//должность врача;
-//диагноз;
-
 package Polyclinic;
 
 import java.time.LocalDate;
 
-public class Polyclinic {
+public class MedicalService {
 
     private String clinicName; // название поликлиники
     private String clinicAddress; // адрес поликлиники
@@ -35,8 +16,8 @@ public class Polyclinic {
 
     private String diagnosis; // диагноз
 
-    public Polyclinic(String clinicName, String clinicAddress, String patientLastName,
-                      int patientPolicyNumber, LocalDate appointmentDate) {
+    public MedicalService(String clinicName, String clinicAddress, String patientLastName,
+                          int patientPolicyNumber, LocalDate appointmentDate) {
         this.setClinicName(clinicName);
         this.setClinicAddress(clinicAddress);
 
@@ -48,26 +29,27 @@ public class Polyclinic {
 
     @Override
     public String toString() {
-        return "Медицинское обслуживание:" + System.lineSeparator() +
+        return "|" + this.getClass().getName() + "|" + System.lineSeparator() +
+               "Медицинское обслуживание:" + System.lineSeparator() +
                "Название поликлиники: " + clinicName + System.lineSeparator() +
-               "адрес поликлиники: " + clinicAddress + System.lineSeparator() +
-               "фамилия пациента: " + patientLastName + System.lineSeparator() +
-               "номер полиса: " + patientPolicyNumber + System.lineSeparator() +
-               "дата осмотра: " + appointmentDate + System.lineSeparator() +
-               "фамилия врача: " + doctorLastName + System.lineSeparator() +
-               "должность врача: " + doctorPosition + System.lineSeparator() +
-               "диагноз: " + diagnosis + System.lineSeparator();
+               "Адрес поликлиники: " + clinicAddress + System.lineSeparator() +
+               "Фамилия пациента: " + patientLastName + System.lineSeparator() +
+               "Номер полиса: " + patientPolicyNumber + System.lineSeparator() +
+               "Дата осмотра: " + appointmentDate + System.lineSeparator() +
+               "Фамилия врача: " + doctorLastName + System.lineSeparator() +
+               "Должность врача: " + doctorPosition + System.lineSeparator() +
+               "Диагноз: " + diagnosis + System.lineSeparator();
     }
 
     public String toSmallString() {
-        return "{ '" + clinicName +
-                "', '" + clinicAddress +
-                "', '" + patientLastName +
-                "', '" + patientPolicyNumber +
-                "', '" + appointmentDate +
-                "', '" + doctorLastName +
-                "', '" + doctorPosition +
-                "', '" + diagnosis + "' }" + System.lineSeparator();
+        return "|" + this.getClass().getName() + "| " + clinicName +  "', '" +
+               clinicAddress + "', '" +
+               patientLastName + "', '" +
+               patientPolicyNumber + "', '" +
+               appointmentDate + "', '" +
+               doctorLastName + "', '" +
+               doctorPosition + "', '" +
+               diagnosis;
     }
 
     public String getClinicName() {
